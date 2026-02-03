@@ -13028,6 +13028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 403393737}
   - component: {fileID: 403393740}
+  - component: {fileID: 403393741}
   - component: {fileID: 403393739}
   - component: {fileID: 403393738}
   m_Layer: 0
@@ -13161,6 +13162,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterDamage
   damage: 0
   playerHealth: {fileID: 813088813}
+--- !u!114 &403393741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403393736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86feb12992486794ebb5b0e6158825f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterMovement
+  moveSpeed: 2
+  playerTransform: {fileID: 813088808}
 --- !u!1 &417904877
 GameObject:
   m_ObjectHideFlags: 0
