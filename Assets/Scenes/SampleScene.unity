@@ -1232,8 +1232,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 0.29785797
+  m_UseAutoMass: 0
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -13049,7 +13049,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.65, y: -2.222, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1.9899}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 312164244}
@@ -13176,6 +13176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterMovement
   moveSpeed: 1.5
+  monsterScale: 2
   playerTransform: {fileID: 813088808}
 --- !u!61 &403393742
 BoxCollider2D:
@@ -14689,6 +14690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterMovement
   moveSpeed: 2
+  monsterScale: 1.5
   playerTransform: {fileID: 813088808}
 --- !u!61 &1365735101
 BoxCollider2D:
