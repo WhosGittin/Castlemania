@@ -13334,6 +13334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterDamage
   damage: 0
   playerHealth: {fileID: 813088813}
+  monsterMovement: {fileID: 403393741}
 --- !u!114 &403393741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13349,6 +13350,11 @@ MonoBehaviour:
   moveSpeed: 1.5
   monsterScale: 2
   playerTransform: {fileID: 813088808}
+  KBForce: 2
+  KBCounter: 0
+  KBTotalTime: 0.2
+  KnockFromRight: 0
+  monsterRb: {fileID: 312164243}
 --- !u!61 &403393742
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13917,7 +13923,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &904805119
 Rigidbody2D:
   serializedVersion: 5
@@ -14848,6 +14854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterDamage
   damage: 0
   playerHealth: {fileID: 813088813}
+  monsterMovement: {fileID: 0}
 --- !u!114 &1365735100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14863,6 +14870,11 @@ MonoBehaviour:
   moveSpeed: 2
   monsterScale: 1.5
   playerTransform: {fileID: 813088808}
+  KBForce: 1
+  KBCounter: 0.2
+  KBTotalTime: 0
+  KnockFromRight: 0
+  monsterRb: {fileID: 904805119}
 --- !u!61 &1365735101
 BoxCollider2D:
   m_ObjectHideFlags: 0
