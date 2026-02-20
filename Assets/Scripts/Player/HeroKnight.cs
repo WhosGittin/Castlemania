@@ -53,6 +53,7 @@ public class HeroKnight : MonoBehaviour
 	public Transform attackPoint;
 	public float attackRange = 0.5f;
 	public LayerMask bossLayer;
+	public LayerMask enemyLayer;
 
 	// AttackPoint mirroring
 	private Vector3 attackPointBaseLocalPos;
@@ -86,7 +87,7 @@ public class HeroKnight : MonoBehaviour
 		m_wallSensorR2 = transform.Find("WallSensor_R2").GetComponent<Sensor_HeroKnight>();
 		m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<Sensor_HeroKnight>();
 		m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<Sensor_HeroKnight>();
-
+		enemyLayer = LayerMask.GetMask("enemies");
 		if (attackPoint != null)
 			attackPointBaseLocalPos = attackPoint.localPosition;
 	}
@@ -333,13 +334,26 @@ public class HeroKnight : MonoBehaviour
 	// Boss damage application
 	void Attack()
 	{
-		if (attackPoint == null) return;
+		Transform attackLocation = GameObject.Find("HeroKnight").transform;
+		int attackRange = GameObject.Find("HeroKnight").GetComponent<PlayerStats>().playerStats.attackRange.value;
+		int damageInflicted = GameObject.Find("HeroKnight").GetComponent<PlayerStats>().damage();
 
-		Collider2D[] hitBosses = Physics2D.OverlapCircleAll(
-			attackPoint.position,
+		Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(
+			attackLocation.position,
 			attackRange,
-			bossLayer
+			enemyLayer
 		);
+		foreach(Collider2D enemy in enemiesHit)
+		{
+			Debug.Log("Hit " + enemy.name);
+			PlayerHealth enemyHealth = enemy.GetComponent<PlayerHealth>();
+			if (enemyHealth != null)			{
+				enemyHealth.TakeDamage(damageInflicted);
+			}
+			//enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+		}
+		Debug.Log("Attacking! Hit " + attackLocation.position.x + " " + attackLocation.position.y + " with range " + attackRange);
+		Debug.Log("Attacking! Hit " + enemiesHit.Length + " bosses.");
 
 
 	}

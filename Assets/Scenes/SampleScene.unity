@@ -1385,7 +1385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 312164244}
   - component: {fileID: 312164243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyGoblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13199,11 +13199,12 @@ GameObject:
   m_Component:
   - component: {fileID: 403393737}
   - component: {fileID: 403393740}
+  - component: {fileID: 403393743}
   - component: {fileID: 403393741}
   - component: {fileID: 403393739}
   - component: {fileID: 403393738}
   - component: {fileID: 403393742}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyGoblinSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13333,7 +13334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterDamage
   damage: 0
-  playerHealth: {fileID: 813088813}
+  playerHealth: {fileID: 0}
   monsterMovement: {fileID: 403393741}
 --- !u!114 &403393741
 MonoBehaviour:
@@ -13401,6 +13402,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.24294674, y: 0.3065056}
   m_EdgeRadius: 0
+--- !u!114 &403393743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403393736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b99b351804a5b0e4fb02f18fc93c8761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 200
+  currentHealth: 0
 --- !u!1 &417904877
 GameObject:
   m_ObjectHideFlags: 0
@@ -13841,9 +13856,12 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6323719953710832613, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       insertIndex: 2
-      addedObject: {fileID: 813088813}
+      addedObject: {fileID: 813088814}
     - targetCorrespondingSourceObject: {fileID: 6323719953710832613, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       insertIndex: 3
+      addedObject: {fileID: 813088809}
+    - targetCorrespondingSourceObject: {fileID: 6323719953710832613, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+      insertIndex: 4
       addedObject: {fileID: 813088803}
     - targetCorrespondingSourceObject: {fileID: 111755813442870902, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       insertIndex: 1
@@ -13888,12 +13906,28 @@ MonoBehaviour:
   bossLayer:
     serializedVersion: 2
     m_Bits: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &813088808 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8413529789942519730, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
   m_PrefabInstance: {fileID: 756514464}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &813088813
+--- !u!114 &813088809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813088796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e218db6759a315f42ba02e71f3613c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+  playerHealth: {fileID: 813088814}
+--- !u!114 &813088814
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13905,7 +13939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b99b351804a5b0e4fb02f18fc93c8761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 10
+  maxHealth: 100
   currentHealth: 0
 --- !u!1 &904805118
 GameObject:
@@ -14853,7 +14887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterDamage
   damage: 0
-  playerHealth: {fileID: 813088813}
+  playerHealth: {fileID: 0}
   monsterMovement: {fileID: 0}
 --- !u!114 &1365735100
 MonoBehaviour:

@@ -5,37 +5,34 @@ using UnityEngine;
 
 namespace StatSystem
 {
-	public class PlayerStats : IBaseStats
+	public class BaseStats : IBaseStats
 	{
-		private IStat _strength;
 		public IStat strength
 		{
-			get => _strength;
-			set => _strength = value;
+			get;
+			set;
 		}
 
-		private IStat _dexterity;
+		public IStat attackRange { get; set; }
+
 		public IStat dexterity
 		{
-			get => _dexterity;
-			set => _dexterity = value;
+			get;
+			set;
 		}
 
-		public IStat _movementSpeed;
 		public IStat movementSpeed
 		{
-			get => _movementSpeed;
-			set => _movementSpeed = value;
+			get;
+			set;
 		}
 
-		public PlayerStats(int str, int dex, int movement)
+		public BaseStats(int str, int dex, int movement, int attackRangeValue)
 		{
-			_strength.name = "Strength";
-			_strength.value = str;
-			_dexterity.name = "Dexterity";
-			_dexterity.value = dex;
-			_movementSpeed.name = "Movement Speed";
-			_movementSpeed.value = movement;
+			strength = new Stat { name = "Strength", value = str };
+			dexterity = new Stat { name = "Dexterity", value = dex };
+			movementSpeed = new Stat { name = "Movement Speed", value = movement };
+			attackRange = new Stat { name = "Attack Range", value = attackRangeValue };
 		}
 
 	}

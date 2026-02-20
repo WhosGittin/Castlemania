@@ -8,6 +8,12 @@ namespace StatSystem
 		public int value { get; set; }
 	}
 
+	public class Stat : IStat
+	{
+		public string name { get; set; }
+		public int value { get; set; }
+	}
+
 	public interface IBaseStats
 	{
 		public IStat strength { get; set; }
