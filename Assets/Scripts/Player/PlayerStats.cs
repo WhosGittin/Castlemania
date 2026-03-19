@@ -6,19 +6,19 @@ public class PlayerStats : MonoBehaviour
 	public BaseStats playerStats;
 
 	public PlayerHealth playerHealth;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+	// Start is called once before the first execution of Update after the MonoBehaviour is created
+	void Start()
+	{
 		// Default values for player stats.
 		// STR DEX MOV
-		playerStats = new BaseStats(10, 10, 5, 10);
+		playerStats = new BaseStats(10, 10, 5, 3);
 		// Default max health value for the player.
 		playerHealth = GameObject.Find("HeroKnight").GetComponent<PlayerHealth>();
-    }
+	}
 
 	void Update()
 	{
-		
+
 	}
 
 	public void attack()
