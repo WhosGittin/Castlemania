@@ -14792,10 +14792,14 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8114d85864b9ef849b03395f70a18434, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
   spawnMonster: {fileID: 1571225740998718243, guid: 555536aa0a4909e449f8b3ebb1096287, type: 3}
-  spawnLocation: {x: 0, y: 2, z: 0}
+  spawnLocations:
+  - {x: 0, y: 2, z: 0}
+  - {x: -17.5, y: 5.16, z: 0}
+  - {x: 12.57, y: 11.1, z: 0}
   spawnInterval: 3
+  spawnAmount: 1
 --- !u!4 &2103554514
 Transform:
   m_ObjectHideFlags: 0
@@ -14821,11 +14825,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 581866548914100709, guid: 555536aa0a4909e449f8b3ebb1096287, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.19914
+      value: 12.57
       objectReference: {fileID: 0}
     - target: {fileID: 581866548914100709, guid: 555536aa0a4909e449f8b3ebb1096287, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.38775
+      value: 11.1
       objectReference: {fileID: 0}
     - target: {fileID: 581866548914100709, guid: 555536aa0a4909e449f8b3ebb1096287, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14862,6 +14866,10 @@ PrefabInstance:
     - target: {fileID: 1571225740998718243, guid: 555536aa0a4909e449f8b3ebb1096287, type: 3}
       propertyPath: m_Name
       value: EnemyGoblin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571225740998718243, guid: 555536aa0a4909e449f8b3ebb1096287, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6606805854765092727, guid: 555536aa0a4909e449f8b3ebb1096287, type: 3}
       propertyPath: playerTransform

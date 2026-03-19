@@ -4,8 +4,8 @@ public class SpawnManager : MonoBehaviour
 {
 	//Prefab of the monster to spawn
 	public GameObject spawnMonster;
-	//Location where the monster will spawn
-	public Vector3 spawnLocation;
+	//Array of spawn locations for the monsters
+	public Vector3[] spawnLocations;
 	//Time between spawns
 	public float spawnInterval;
 	//Number of monsters to spawn each time
@@ -39,7 +39,7 @@ public class SpawnManager : MonoBehaviour
 		for (int i = 0; i < spawnAmount; i++)
 		{
 			//Instantiate the monster prefab at the specified location
-			GameObject NewEnemy = Instantiate(spawnMonster, spawnLocation, Quaternion.identity);
+			GameObject NewEnemy = Instantiate(spawnMonster, spawnLocations[Random.Range(0, spawnLocations.Length)], Quaternion.identity);
 		}
 	}
 }
