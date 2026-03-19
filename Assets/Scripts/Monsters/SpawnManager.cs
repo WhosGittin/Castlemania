@@ -13,7 +13,7 @@ public class SpawnManager : MonoBehaviour
 
 	//Timer to keep track of time between spawns
 	private float timer = 0f;
-
+	//test
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
 	{
