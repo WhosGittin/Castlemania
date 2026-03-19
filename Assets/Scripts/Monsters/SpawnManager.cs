@@ -8,6 +8,8 @@ public class SpawnManager : MonoBehaviour
 	public Vector3 spawnLocation;
 	//Time between spawns
 	public float spawnInterval;
+	//Number of monsters to spawn each time
+	public float spawnAmount = 1;
 
 	//Timer to keep track of time between spawns
 	private float timer = 0f;
@@ -34,7 +36,10 @@ public class SpawnManager : MonoBehaviour
 	//Method for spawning enemies
 	void SpawnEnemy()
 	{
-		//Instantiate the monster prefab at the specified location
-		GameObject NewEnemy = Instantiate(spawnMonster, spawnLocation, Quaternion.identity);
+		for (int i = 0; i < spawnAmount; i++)
+		{
+			//Instantiate the monster prefab at the specified location
+			GameObject NewEnemy = Instantiate(spawnMonster, spawnLocation, Quaternion.identity);
+		}
 	}
 }
